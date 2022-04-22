@@ -1,0 +1,18 @@
+# comando * criar app - python manage.py startapp NOMEAPP
+
+1 - registrar app no settings.py ('accounts.apps.AccountsConfig',)
+2 - regisrrar url no urls.py (path('accounts/', include('accounts.urls')),)
+2 - criar (accounts/urls.py) no direct accounts
+3 - no accounts/urls.py [
+	from django.urls import path
+	from . import views
+	urlpatterns = [
+    		path('', views.login, name='index_login')
+	]
+]
+4 - criar func no accounts/views.py (
+	def login(request):
+    		return render(request, 'accounts/login.html')
+)
+5 - criar direct templates
+ 
